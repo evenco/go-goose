@@ -1,9 +1,14 @@
+checkout:
+  post:
+    - rm -rf ~/.go_workspace/src/github.com/evenco
+    - mkdir -p ~/.go_workspace/src/github.com/evenco
+    - cp -R ~/go-goose ~/.go_workspace/src/github.com/evenco/go-goose
+    - cd ~/.go_workspace/src/github.com/evenco/go-goose
+
 dependencies:
   override:
-    - mkdir -p "$GOPATH/src/$IMPORT_PATH"
-    - rsync -azC --delete ./ "$GOPATH/src/$IMPORT_PATH/"
-    - go get ./...
+    - go get -t -v github.com/evenco/go-goose/lib/...
 
 test:
   override:
-    - go test ./...
+    - go test github.com/evenco/go-goose/lib/...
