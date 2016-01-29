@@ -1,7 +1,7 @@
 package main
 
 import (
-	"bitbucket.org/liamstask/goose/lib/goose"
+	"github.com/evenco/go-goose/lib/goose"
 	"flag"
 	"fmt"
 	"os"
